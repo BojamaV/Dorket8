@@ -20,7 +20,9 @@ print(Fore.GREEN + 'Made by BojamaV')
 
 time.sleep(2)
 
-username = input(Fore.RED + 'Enter Google Dork: ')
+dork = input(Fore.RED + 'Enter your google dork: ')
+keyword = input(Fore.RED + 'Enter URL keywords: ')
+glob = input(Fore.RED + 'enter the link domain (com/gov/net): ')
 
 time.sleep(0.9)
 
@@ -28,9 +30,9 @@ print(Fore.BLUE + 'Processing request...')
 
 time.sleep(1)
 
-search_query=(username)
+search_query=("intext" + dork + "inurl" + keyword + "site:*." + glob)
 for i in search(search_query,
-    tld='com',
+    tld=glob,
     lang='en',
     num=10000,
     stop=10000,
