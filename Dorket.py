@@ -32,7 +32,7 @@ time.sleep(1)
 
 search_query = f"intext:{dork} inurl:{keyword} site:*{glob}"
 for i in search(search_query,
-    tld=glob,
+    tld='com',
     lang='en',
     num=10000,
     stop=10000,
