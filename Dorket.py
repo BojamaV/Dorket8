@@ -30,7 +30,7 @@ print(Fore.BLUE + 'Processing request...')
 
 time.sleep(1)
 
-search_query=("intext" + dork + "inurl" + keyword + "site:*." + glob)
+search_query = f"intext:{dork} inurl:{keyword} site:*{glob}"
 for i in search(search_query,
     tld=glob,
     lang='en',
