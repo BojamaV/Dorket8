@@ -31,10 +31,4 @@ print(Fore.BLUE + 'Processing request...')
 time.sleep(1)
 
 search_query = f"intext:{dork} inurl:{keyword} site:*{glob}"
-for i in search(search_query,
-    tld='com',
-    lang='en',
-    num=10000,
-    stop=10000,
-    pause=2.0):
-    print(i)
+search(search_query, sleep_interval=0.3, num_results=10000)
