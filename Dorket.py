@@ -1,4 +1,6 @@
 from googlesearch import search
 import time
 
-search("Hey world")
+dork = search("Hey world")
+
+print(dork)
