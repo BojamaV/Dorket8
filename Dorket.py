@@ -30,5 +30,7 @@ print(Fore.BLUE + 'Processing request...')
 
 time.sleep(1)
 
-search_query = f"intext:{dork} inurl:{keyword} site:*{glob}"
-search(search_query, sleep_interval=0.3, num_results=10000)
+search = f"intext:{dork} inurl:{keyword} site:*{glob}"
+search(search, sleep_interval=0.3, num_results=10000)
+
+print(search)
