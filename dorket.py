@@ -30,10 +30,8 @@ time.sleep(0.9)
 print(Fore.BLUE + 'Processing request...')
 time.sleep(1)
 search_query=(x)
-for i in search(search_query,
-    tld='com',
-    lang='en',
-    num=100,
-    stop=100,
-    pause=2.0):
-    print(i)
+try:
+    for i in search(search_query, lang='en', num=100, stop=150, pause=2.0):
+        print(i)
+except Exception as e:
+    print(Fore.RED + f"Error: {e}")
