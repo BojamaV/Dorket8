@@ -36,7 +36,7 @@ time.sleep(1)
 
 # Manually limit results using itertools.islice
 try:
-    for i in itertools.islice(search(search_query, lang='en', pause=2.0), 50):
+    for i in itertools.islice(search(search_query, lang='en'), 50):
         print(i)
 except Exception as e:
     print(Fore.RED + f"Error: {e}")
