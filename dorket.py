@@ -1,42 +1,13 @@
-from googlesearch import search
-import time
-from colorama import Fore
-import itertools
+from serpapi import GoogleSearch
 
-print("""
-   _,  
-  / |                  __        
- / ___,  ____ ___     /' |
- /'   `\,--,/'   `\  /'   |
-(       )  (       )'
- \_   _/'  `\_   _/         
-                                          
-      ~Dorket~
-""")
+params = {
+  "q": search_query,
+  "hl": "en",
+  "gl": "us",
+  "api_key": "your-serpapi-key"
+}
 
-time.sleep(1)
-print(Fore.GREEN + 'Made by BojamaV')
-time.sleep(1.5)
-
-print(Fore.GREEN + "!If you have no response just leave a * symbol or blank!")
-inurl = input('URL keyword: ')
-intext = input('Text in webpage: ')
-filetype = input('Filetype: ')
-topLevelDomain = input('TLD: ')
-related = input('Related webpage: ')
-
-if filetype == '*':
-    filetype = "doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml"
-
-search_query = f'inurl:{inurl} intext:{intext} filetype:{filetype} site:*.{topLevelDomain} related:{related}'
-
-time.sleep(0.9)
-print(Fore.BLUE + 'Processing request...')
-time.sleep(1)
-
-# Manually limit results using itertools.islice
-try:
-    for i in itertools.islice(search(search_query, lang='en'), 50):
-        print(i)
-except Exception as e:
-    print(Fore.RED + f"Error: {e}")
+search = GoogleSearch(params)
+results = search.get_dict()
+for result in results['organic_results']:
+    print(result['link'])
