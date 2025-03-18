@@ -1,6 +1,7 @@
 from googlesearch import search
 import time
 from colorama import Fore
+import itertools
 
 print("""
    _,  
@@ -33,8 +34,9 @@ time.sleep(0.9)
 print(Fore.BLUE + 'Processing request...')
 time.sleep(1)
 
+# Manually limit results using itertools.islice
 try:
-    for i in search(search_query, lang='en', stop=50, pause=2.0):
+    for i in itertools.islice(search(search_query, lang='en', pause=2.0), 50):
         print(i)
 except Exception as e:
     print(Fore.RED + f"Error: {e}")
